@@ -1,3 +1,6 @@
+*{
+  box-sizing: border-box;
+}
 body{
   margin:0;
   font-family: "Lucida Grande";
@@ -8,7 +11,7 @@ a {
 }
 header{
   background-color:black;
-  height:80px;
+  height:100px;
   width: 100%;
   position:fixed;
   top:0;
@@ -23,12 +26,16 @@ header{
 
 }
 .header-list{
+  width: fit-content;
   color:white;
   padding-top:2px;
+  padding-bottom: 2px;
   font-size:20px;
+  text-align: center;
   letter-spacing: 2px;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
 }
 .header-list a:hover{
   background-color:rgba(255, 255, 255, 0.5);
@@ -39,10 +46,13 @@ header{
 .header-list a{
   color: white;
   padding:28px;
-  float:left;
-  display:block;
+  flex: auto;
 }
-
+.nav-bar{
+  color: white;
+  float: right;
+  display: none;
+}
 main{
   height:auto;
   padding:90px 80px 10px 80px;
@@ -105,14 +115,18 @@ main-bottom{
   height: fit-content;
   background-color: rgb(204, 204, 204);
 }
+.container{
+  width: 100%;
+  display: flex;
+  text-align: center;
+}
 .gambar img{
-  float: left;
-  width: 20%;
+  width: 70%;
   text-align: center;
   margin: 0 5%;
-  display: block;
-  padding-left: 20px;
-  padding-right: 20px;
+  flex: auto;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 .text{
   width: 100%;
@@ -126,7 +140,6 @@ main-bottom{
   font-style: normal;
   font-size: 20px;
 }
-
 
 main-lowest{
   display: block;
@@ -202,4 +215,28 @@ footer{
   margin: 0;
   padding-bottom: 15px;
   padding-right: 15px;
+}
+
+@media all and (max-width:1000px) {
+  main-bottom{
+    flex-wrap: wrap;
+  }
+  main-bottom{
+    width: max-content;
+  }
+}
+
+@media all and (max-width:670px) {
+  main-bottom{
+    flex-direction: column;
+  }
+  main-bottom{
+    width: max-content;
+  }
+  .header-list{
+    display: none;
+  }
+  .nav-bar{
+    display: block;
+  }
 }
